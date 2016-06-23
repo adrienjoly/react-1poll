@@ -9,11 +9,11 @@ Made with [React.js](https://facebook.github.io/react/) and [Material-UI](materi
 The `gh-pages` branch of this repository contains:
 
 - The `1poll` react component, as defined in [the component subdirectory](https://github.com/adrienjoly/1poll/tree/gh-pages/component);
-- A [demo page](http://adrienjoly.com/1poll/demo) to demonstrate the use of the `1poll` component.
+- A [demo page](http://adrienjoly.com/react-1poll/demo) to demonstrate the use of the `1poll` component.
 
 ## Demo / examples of use
 
-- [Official demo](http://adrienjoly.com/1poll/demo)
+- [Official demo](http://adrienjoly.com/react-1poll/demo)
 - [1task's landing page](http://1task.org/) (and [source code](https://github.com/adrienjoly/1task))
 
 ## How to install and use

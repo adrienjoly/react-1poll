@@ -6,7 +6,7 @@ Made with [React.js](https://facebook.github.io/react/) and [Material-UI](materi
 
 ## Demo / examples of use
 
-- [Official demo](http://adrienjoly.com/1poll/demo)
+- [Official demo](http://adrienjoly.com/react-1poll/demo)
 - [1task's landing page](http://1task.org/) (and [source code](https://github.com/adrienjoly/1task))
 
 ## How to install and use
