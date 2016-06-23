@@ -1,6 +1,6 @@
-# 1poll
+# react-1poll component
 
-A simple [Doodle](http://doodle.com)-like poll component that makes it easy for contributors to add more options. Star it on [npm](https://www.npmjs.com/package/react-1poll) and on [github](https://github.com/adrienjoly/1poll).
+A simple [Doodle](http://doodle.com)-like poll component that makes it easy for contributors to add more options. Star it on [npm](https://www.npmjs.com/package/react-1poll) and on [github](https://github.com/adrienjoly/react-1poll).
 
 Made with [React.js](https://facebook.github.io/react/) and [Material-UI](material-ui.com). Thanks to [Romain Dardour](http://twitter.com/rdardour) for his help!
 

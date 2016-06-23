@@ -1,6 +1,6 @@
-# 1poll
+# react-1poll
 
-A simple [Doodle](http://doodle.com)-like poll component that makes it easy for contributors to add more options. Star it on [npm](https://www.npmjs.com/package/react-1poll) and on [github](https://github.com/adrienjoly/1poll).
+A simple [Doodle](http://doodle.com)-like poll component that makes it easy for contributors to add more options. Star it on [npm](https://www.npmjs.com/package/react-1poll) and on [github](https://github.com/adrienjoly/react-1poll).
 
 Made with [React.js](https://facebook.github.io/react/) and [Material-UI](material-ui.com). Thanks to [Romain Dardour](http://twitter.com/rdardour) for his help!
 
@@ -8,7 +8,6 @@ Made with [React.js](https://facebook.github.io/react/) and [Material-UI](materi
 
 The `gh-pages` branch of this repository contains:
 
-- The project's landing page, as seen on [adrienjoly.com/1poll](http://adrienjoly.com/1poll);
 - The `1poll` react component, as defined in [the component subdirectory](https://github.com/adrienjoly/1poll/tree/gh-pages/component);
 - A [demo page](http://adrienjoly.com/1poll/demo) to demonstrate the use of the `1poll` component.
 
@@ -45,4 +44,4 @@ ReactDOM.render(<PollForm
 
 ## Component API reference
 
-See [1poll component's README.md file](https://github.com/adrienjoly/1poll/tree/gh-pages/component).
+See [1poll component's README.md file](https://github.com/adrienjoly/react-1poll/tree/gh-pages/component).
