@@ -64,7 +64,7 @@ module.exports = (function(){
         defaultChecked: option.checked,
         onCheck: this._onCheck,
         labelStyle: this.props.labelStyle,
-        style: { marginTop: '16px' }
+        style: { margin: '16px 0' }
       });
     },
     _refreshSelectedOptions: function() {
