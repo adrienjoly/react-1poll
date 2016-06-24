@@ -5,6 +5,7 @@
   var React = require('react');
   var ReactDOM = require('react-dom');
   var Paper = require('material-ui/lib/paper');
+  var Checkbox = require('material-ui/lib/checkbox');
   var RaisedButton = require('material-ui/lib/raised-button');
   var injectTapEventPlugin = require('react-tap-event-plugin');
   var Poll = require('./1poll-react-component.js');
@@ -49,13 +50,23 @@
   var App = React.createClass({
     getInitialState: function() {
       return {
+        entryToggle: true,
         options: DEFAULT_ITEMS
       };
     },
     render: function() {
       return React.createElement(Paper, paperProps,
+        React.createElement(Checkbox, {
+          name: 'entryToggle',
+          label: 'Allow entry of additional options',
+          checked: this.state.entryToggle,
+          onCheck: this._onToggleEntry,
+          labelStyle: { color: 'white' },
+          style: { margin: '16px 0', backgroundColor: 'black' }
+        }),
         React.createElement(Poll, {
           options: this.state.options,
+          allowNewEntries: this.state.entryToggle,
           onNewOption: this.onNewOption
         }),
         React.createElement(RaisedButton, {
@@ -69,6 +80,11 @@
     onNewOption: function(newOption) {
       this.setState({
         options: this.state.options.concat([ newOption ])
+      });
+    },
+    _onToggleEntry: function() {
+      this.setState({
+        entryToggle: !this.state.entryToggle
       });
     }
   });

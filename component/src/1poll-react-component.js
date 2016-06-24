@@ -15,6 +15,7 @@ module.exports = (function(){
         autoFocus: true,
         options: [],
         labelStyle: undefined,
+        allowNewEntries: true,
         onSelectionChange: undefined, // function([ { name: String, defaultChecked: Boolean } ])
         onNewOption: undefined // function({ name: String, defaultChecked: Boolean }) that should update this.props.options
       };
@@ -34,18 +35,21 @@ module.exports = (function(){
       return (nextProps != this.props || this.state.options != nextState.options);
     },
     render: function() {
-      return renderComponent(this.state.options.map(this._renderOption).concat([
-        React.createElement(TextField, {
-          autoFocus: this.props.autoFocus,
-          hintText: 'Add an option',
-          onBlur: this._handleEntryBlur,
-          onEnterKeyDown: this._handleAddOption,
-          style: {
-            paddingLeft: '42px',
-            marginBottom: '20px'
-          }
-        })
-      ]));
+      return renderComponent(this.state.options
+        .map(this._renderOption)
+        .concat(!this.props.allowNewEntries ? [] : [
+          React.createElement(TextField, {
+            autoFocus: this.props.autoFocus,
+            hintText: 'Add an option',
+            onBlur: this._handleEntryBlur,
+            onEnterKeyDown: this._handleAddOption,
+            style: {
+              paddingLeft: '42px',
+              marginBottom: '20px'
+            }
+          })
+        ])
+      );
     },
     _checkByDefault: function(option) {
       option.checked = option.checked || !!option.defaultChecked;
