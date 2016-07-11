@@ -61,6 +61,7 @@
 	        autoFocus: true,
 	        options: [],
 	        labelStyle: undefined,
+	        allowNewEntries: true,
 	        onSelectionChange: undefined, // function([ { name: String, defaultChecked: Boolean } ])
 	        onNewOption: undefined // function({ name: String, defaultChecked: Boolean }) that should update this.props.options
 	      };
@@ -80,18 +81,21 @@
 	      return (nextProps != this.props || this.state.options != nextState.options);
 	    },
 	    render: function() {
-	      return renderComponent(this.state.options.map(this._renderOption).concat([
-	        React.createElement(TextField, {
-	          autoFocus: this.props.autoFocus,
-	          hintText: 'Add an option',
-	          onBlur: this._handleEntryBlur,
-	          onEnterKeyDown: this._handleAddOption,
-	          style: {
-	            paddingLeft: '42px',
-	            marginBottom: '20px'
-	          }
-	        })
-	      ]));
+	      return renderComponent(this.state.options
+	        .map(this._renderOption)
+	        .concat(!this.props.allowNewEntries ? [] : [
+	          React.createElement(TextField, {
+	            autoFocus: this.props.autoFocus,
+	            hintText: 'Add an option',
+	            onBlur: this._handleEntryBlur,
+	            onEnterKeyDown: this._handleAddOption,
+	            style: {
+	              paddingLeft: '42px',
+	              marginBottom: '20px'
+	            }
+	          })
+	        ])
+	      );
 	    },
 	    _checkByDefault: function(option) {
 	      option.checked = option.checked || !!option.defaultChecked;
@@ -106,7 +110,7 @@
 	        defaultChecked: option.checked,
 	        onCheck: this._onCheck,
 	        labelStyle: this.props.labelStyle,
-	        style: { marginTop: '16px' }
+	        style: { margin: '16px 0' }
 	      });
 	    },
 	    _refreshSelectedOptions: function() {
@@ -117,8 +121,9 @@
 	        }
 	      }
 	      if (this.state.selectedOptions.length != selectedOptions.length) {
-	        this.setState({ selectedOptions: selectedOptions });
-	        this.props.onSelectionChange && this.props.onSelectionChange(selectedOptions);
+	        this.setState({ selectedOptions: selectedOptions }, this.props.onSelectionChange && function(){
+	          this.props.onSelectionChange(selectedOptions);
+	        });
 	      }
 	    },
 	    _toggleOption: function(optionIndex, checked) {
