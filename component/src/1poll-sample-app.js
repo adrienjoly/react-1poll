@@ -4,9 +4,9 @@
   
   var React = require('react');
   var ReactDOM = require('react-dom');
-  var Paper = require('material-ui/lib/paper');
-  var Checkbox = require('material-ui/lib/checkbox');
-  var RaisedButton = require('material-ui/lib/raised-button');
+  var Paper = require('material-ui/Paper').default;
+  var Checkbox = require('material-ui/Checkbox').default;
+  var RaisedButton = require('material-ui/RaisedButton').default;
   var injectTapEventPlugin = require('react-tap-event-plugin');
   var Poll = require('./1poll-react-component.js');
 

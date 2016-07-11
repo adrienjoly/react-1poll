@@ -1,8 +1,8 @@
 module.exports = (function(){
   'use strict';
   var React = require('react');
-  var Checkbox = require('material-ui/lib/checkbox');
-  var TextField = require('material-ui/lib/text-field');
+  var Checkbox = require('material-ui/Checkbox').default;
+  var TextField = require('material-ui/TextField').default;
 
   function renderComponent(children) {
     var divContainer = [ 'div', { className: '1poll-component' } ];
